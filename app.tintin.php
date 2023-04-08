@@ -1,30 +1,30 @@
-#extends("layout")
+%extends("layout")
 
-#block("title", "The page title")
+%block("title", "The page title")
 
-#block("content")
-	#if(true)
+%block("content")
+	%if(true)
 		// Do Something
-	#endif
+	%endif
 
-	#loop($users as $user)
+	%loop($users as $user)
 		{{ $user->name }}
-	#endloop
+	%endloop
 
-	{# comment #}
-	#if (true)
+	{{# comment #}}
+	%if (true)
 		// Do Something
-	#endif
+	%endif
 
-	#white(true)
+	%white(true)
 		// Do Somethink
-	#endwhile
+	%endwhile
 
-	#for($i = 0; $i < 0; $i++)
+	%for($i = 0; $i < 0; $i++)
 		// Do Somethink
-	#endfor
+	%endfor
 
-	#unless(false)
+	%unless(false)
 		// Do Somethink
-	#endunless
-#endblock
+	%endunless
+%endblock
