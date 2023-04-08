@@ -1,6 +1,5 @@
-// ATTENTION - THIS DIRECTORY CONTAINS THIRD PARTY OPEN SOURCE MATERIALS:
 [{
-	"name": "definitelytyped",
-	"repositoryURL": "https://github.com/DefinitelyTyped/DefinitelyTyped",
-	"license": "MIT"
+  "name": "definitelytyped",
+  "repositoryURL": "https://github.com/DefinitelyTyped/DefinitelyTyped",
+  "license": "MIT"
 }]

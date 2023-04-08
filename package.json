@@ -10,7 +10,7 @@
   "engines": {
     "vscode": "^1.69.0"
   },
-  "main": "./out/extension.js",
+  "main": "./out/src/extension.js",
   "scripts": {
     "build-srv": "cd ./server && npm install && tsc -p ./",
     "compile": "tsc -watch -p ./",
@@ -44,7 +44,7 @@
     "languages": [
       {
         "id": "tintin",
-        "aliases": ["bowphp", "tintin", "Tintin"],
+        "aliases": ["Tintin", "tintin"],
         "extensions": [".tintin.php", ".tintin"],
         "configuration": "./tintin-configuration.json"
       }
@@ -67,7 +67,7 @@
         "tintin.format.enable": {
           "type": "boolean",
           "default": false,
-          "description": "Enable format blade file"
+          "description": "Enable format tintin file"
         }
       }
     }
