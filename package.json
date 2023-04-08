@@ -10,6 +10,14 @@
   "engines": {
     "vscode": "^1.69.0"
   },
+  "main": "./out/extension.js",
+  "scripts": {
+    "build-srv": "cd ./server && npm install && tsc -p ./",
+    "compile": "tsc -watch -p ./",
+    "vscode:prepublish": "webpack --mode production && pushd \"./\" && npm run build-srv && popd",
+    "webpack": "webpack --mode development",
+    "webpack-dev": "webpack --mode development --watch"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/bowphp/vscode-extension.git"
@@ -65,7 +73,9 @@
     }
   },
   "activationEvents": [
-    "onLanguage:blade"
+    "onLanguage:php",
+    "onLanguage:js",
+    "onLanguage:html"
   ],
   "devDependencies": {
     "@types/node": "^16.18.16",
@@ -82,7 +92,7 @@
     "vscode-languageserver-types": "^3.17.3"
   },
   "galleryBanner": {
-    "color": "#f66f62",
+    "color": "#d5a6bd",
     "theme": "dark"
   }
 }

@@ -1,1 +1,6 @@
-bow-tintin-*.vsix
+out
+node_modules
+*.vsix
+**/*.log
+.vscode/tests/
+**/temp/
