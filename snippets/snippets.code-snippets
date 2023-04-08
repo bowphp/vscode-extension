@@ -82,7 +82,7 @@
   },
   "tintin comment": {
     "prefix": "t:comment",
-    "body": "{{# ${1:comment} #}}",
+    "body": "{## ${1:comment} ##}",
     "description": "comment block"
   },
   "tintin echo-data": {
