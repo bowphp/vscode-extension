@@ -138,13 +138,13 @@
     "tintin": {
       "patterns": [
         {
-          "begin": "{{--",
+          "begin": "{{##",
           "beginCaptures": {
             "0": {
               "name": "punctuation.definition.comment.begin.tintin"
             }
           },
-          "end": "--}}",
+          "end": "##}}",
           "endCaptures": {
             "0": {
               "name": "punctuation.definition.comment.end.tintin"
@@ -270,7 +270,7 @@
           ]
         },
         {
-          "begin": "(?<!-){{{",
+          "begin": "(?<!%){{{",
           "beginCaptures": {
             "0": {
               "name": "support.function.construct.begin.tintin"
@@ -294,7 +294,7 @@
           ]
         },
         {
-          "begin": "(?<![-{]){{",
+          "begin": "(?<![%{]){{",
           "beginCaptures": {
             "0": {
               "name": "support.function.construct.begin.tintin"
@@ -318,14 +318,14 @@
           ]
         },
         {
-          "begin": "(?<!-){#",
+          "begin": "(?<!%){{",
           "beginCaptures": {
             "0": {
               "name": "support.function.construct.begin.tintin"
             }
           },
           "contentName": "source.php",
-          "end": "#}",
+          "end": "}}",
           "endCaptures": {
             "0": {
               "name": "support.function.construct.end.tintin"
@@ -342,7 +342,7 @@
           ]
         },
         {
-          "begin": "(-){{",
+          "begin": "(%){{",
           "beginCaptures": {
             "0": {
               "name": "begin.bracket.round.tintin"
@@ -369,7 +369,7 @@
           ]
         },
         {
-          "begin": "(?x)(?<![A-Za-z0-9_-]) (-  (?i:\n    auth\n    |stop\n    |can\n    |cannot\n    |jump\n    |dd\n    |dump\n    |elseif\n    |empty\n    |error\n    |extends\n    |for\n    |loop\n    |if\n    |include\n    |includeif\n    |includeunless\n    |includewhen\n    |inject\n    |isset\n    |json\n    |lang\n    |once\n    |prepend\n    |push\n    |block\n    |unless\n    |unset\n    |while\n    |production\n    |env\n    |php\n    |js\n    |checked\n    |selected\n    |disabled\n    |style\n    |readonly\n    |required\n  )[\\t ]*\n)(\\() # Followed by opening parentheses\n",
+          "begin": "(?x)(?<![A-Za-z0-9_-]) (%  (?i:\n    auth\n    |stop\n    |jump\n    |elseif\n    |empty\n    |error\n    |extends\n    |for\n    |loop\n    |if\n    |include\n    |includeif\n    |includeunless\n    |includewhen\n    |inject\n    |isset\n    |json\n    |block\n    |unless\n    |unset\n    |while\n    |production\n    |env\n    |php\n   )[\\t ]*\n)(\\() # Followed by opening parentheses\n",
           "beginCaptures": {
             "1": {
               "name": "keyword.tintin"
@@ -393,7 +393,7 @@
           ]
         },
         {
-          "begin": "(?x)(?<![A-Za-z0-9_-]) (-  (?i:\n    else\n    |endauth\n    |endempty\n    |enderror\n    |endfor\n    |endloop\n    |endguest\n    |endif\n    |endisset\n    |endlang\n    |endblock\n    |endunless\n    |endwhile\n    |endproduction\n    |endenv\n  )[\\t ]*\n)(\\() # Followed by opening parentheses\n",
+          "begin": "(?x)(?<![A-Za-z0-9_-]) (%  (?i:\n    else\n    |endauth\n    |endempty\n    |enderror\n    |endfor\n    |endloop\n    |endguest\n    |endif\n    |endisset\n    |endblock\n    |endunless\n    |endwhile\n    |endproduction\n    |endenv\n  )[\\t ]*\n)(\\() # Followed by opening parentheses\n",
           "beginCaptures": {
             "1": {
               "name": "keyword.tintin"
@@ -417,16 +417,16 @@
           ]
         },
         {
-          "match": "(?x)(?<![A-Za-z0-9_-]) #(?:  stop\n  |continue\n  |csrf\n  |else\n)\\b\n",
+          "match": "(?x)(?<![A-Za-z0-9_-]) %(?:  stop\n  |jump\n  |csrf\n  |else\n)\\b\n",
           "name": "keyword.tintin"
         },
         {
-          "match": "(?x)(?<![A-Za-z0-9_-]) #(end)? (?i:  auth\n  |empty\n  |error\n  |for\n  |loop\n  |guest\n  |if\n  |isset\n  |lang\n  |block\n  |unless\n  |verbatim\n  |while\n  |production\n  |env\n)\\b\n",
+          "match": "(?x)(?<![A-Za-z0-9_-]) %(end)? (?i:  auth\n  |empty\n  |error\n  |for\n  |loop\n  |guest\n  |if\n  |isset\n  |lang\n  |block\n  |unless\n  |while\n  |production\n  |env\n)\\b\n",
           "name": "keyword.tintin"
         },
         {
-          "begin": "(?<![A-Za-z0-9_-])#(?i:php|setup)\\b",
-          "end": "(?<![A-Za-z0-9_-])(?=#(?i:endphp|endsetup)\\b)",
+          "begin": "(?<![A-Za-z0-9_-])%(?i:php|setup)\\b",
+          "end": "(?<![A-Za-z0-9_-])(?=%(?i:endphp|endsetup)\\b)",
           "beginCaptures": {
             "0": {
               "name": "punctuation.section.embedded.begin.php"
@@ -446,7 +446,7 @@
           ]
         },
         {
-          "begin": "(?x)(?<![A-Za-z0-9_-]) (#(?i:endphp|endsetup)[\\t ]*) (\\()",
+          "begin": "(?x)(?<![A-Za-z0-9_-]) (%(?i:endphp|endsetup)[\\t ]*) (\\()",
           "beginCaptures": {
             "1": {
               "name": "punctuation.section.embedded.end.php"
@@ -470,11 +470,11 @@
           ]
         },
         {
-          "match": "(?x)(?<![A-Za-z0-9_-]) #(?:(?i)endphp|endsetup)\\b",
+          "match": "(?x)(?<![A-Za-z0-9_-]) %(?:(?i)endphp|endsetup)\\b",
           "name": "punctuation.section.embedded.end.php"
         },
         {
-          "begin": "(?x)(?<![A-Za-z0-9_-]) (-\\w+(?:::w+)?[\\t ]*) (\\() # Followed by opening parentheses",
+          "begin": "(?x)(?<![A-Za-z0-9_-]) (%\\w+(?:::w+)?[\\t ]*) (\\() # Followed by opening parentheses",
           "beginCaptures": {
             "1": {
               "name": "entity.name.function.tintin"
@@ -498,7 +498,7 @@
           ]
         },
         {
-          "match": "(?x)(?<![A-Za-z0-9_-]) -\\w+(?:::w+)?\\b",
+          "match": "(?x)(?<![A-Za-z0-9_-]) %\\w+(?:::w+)?\\b",
           "name": "entity.name.function.tintin"
         },
         {
