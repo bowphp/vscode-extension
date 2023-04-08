@@ -4,7 +4,7 @@
     "description": "Bow Tintin Language Support (https://github.com/bowphp/tintin).",
     "version": "0.0.5",
     "author": "Franck DAKIA",
-    "icon": "icons/bow.jpeg",
+    "icon": "icons/bow.jpg",
     "publisher": "papac",
     "bugs": "https://github.com/bowphp/vscode-extension/issues",
     "engines": {
