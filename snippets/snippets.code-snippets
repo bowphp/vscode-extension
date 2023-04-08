@@ -36,16 +36,31 @@
       "    $3",
       "#endif"
     ],
-    "description": "if-else block"
+    "description": "#if...#else block"
+  },
+  "If-IfElse-else-block": {
+    "prefix": "t:if-elif-else",
+    "body": [
+      "#if ($1)",
+      "    $2",
+      "#ifelse",
+      "    $3",
+      "#else",
+      "    $4",
+      "#endif"
+    ],
+    "description": "#if...#elseif..#else block"
   },
   "Unless": {
     "prefix": "t:unless",
     "body": [
-      "#unless (\\$name == $1)"
+      "#unless ($1)",
+      "    $2",
+      "#endunless",
     ],
     "description": "#unless block"
   },
-  
+
   /* Loops */
   "For-block": {
     "prefix": "t:for",
@@ -73,11 +88,16 @@
   "tintin echo-data": {
     "prefix": "t:echo",
     "body": "{{ ${1:\\$data} }}",
-    "description": "#echo data"
+    "description": "show escaped data"
+  },
+  "tintin echo-data unescape": {
+    "prefix": "t:recho",
+    "body": "{{{ ${1:\\$data} }}}",
+    "description": "show unescaped data"
   },
   "inject service": {
     "prefix": "t:inject",
-    "body": "#inject('${1:name}', '${2:class}')",
+    "body": "#inject('${1:name}', '${2:default}')",
     "description": "#inject Service"
   },
   "loop": {
@@ -86,7 +106,6 @@
      "#loop (${1:\\$collection} as ${2:\\$item})",
       "    $3",
       "#endloop"
-     
     ],
     "description": "$loop block"
   },
@@ -99,5 +118,5 @@
     "prefix": "t:jump",
     "body": "#jump(\\$name == $1)",
     "description": "jump"
-  }, 
+  },
 }
