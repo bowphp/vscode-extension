@@ -6,13 +6,13 @@
     "author": "Franck DAKIA",
     "icon": "icons/bow.jpeg",
     "publisher": "papac",
-    "bugs": "https://github.com/papac/bow-tintin-vscode/issues",
+    "bugs": "https://github.com/bowphp/vscode-extension/issues",
     "engines": {
         "vscode": "^1.45.0"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/papac/bow-tintin-vscode.git"
+        "url": "https://github.com/bowphp/vscode-extension.git"
     },
     "categories": [
         "Programming Languages",
@@ -22,7 +22,7 @@
     "snippets": [
         {
           "language": "tintin",
-          "path": "./snippets/snippets.json"
+          "path": "./snippets/snippets.code-snippets"
         }
     ],
     "contributes": {
@@ -37,7 +37,7 @@
         "grammars": [
             {
                 "language": "tintin",
-                "scopeName": "js.text.html.php.tintin",
+                "scopeName": "js.text.html.css.php.tintin",
                 "path": "./syntaxes/tintin.tmLanguage.json"
             }
         ]
