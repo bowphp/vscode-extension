@@ -1,122 +1,122 @@
 {
   "Extend layout": {
     "prefix": "t:extends",
-    "body": "#extends('${1:name}')",
-    "description": "#extends view layout"
+    "body": "%extends('${1:name}')",
+    "description": "%extends view layout"
   },
   "Block layout": {
     "prefix": "t:block",
     "body": [
-      "#block('${1:name}')",
+      "%block('${1:name}')",
       "    $2",
-      "#endblock"
+      "%endblock"
     ],
     "description": "block view layout"
   },
   "Include view": {
     "prefix": "t:include",
-    "body": "#include('${1:name}', [])",
-    "description": "#include view"
+    "body": "%include('${1:name}', [])",
+    "description": "%include view"
   },
   "If-block": {
     "prefix": "t:if",
     "body": [
-      "#if ($1)",
+      "%if ($1)",
       "    $2",
-      "#endif"
+      "%endif"
     ],
-    "description": "#if block"
+    "description": "%if block"
   },
   "If-else-block": {
     "prefix": "t:if-else",
     "body": [
-      "#if ($1)",
+      "%if (${1:condition})",
       "    $2",
-      "#else",
+      "%else",
       "    $3",
-      "#endif"
+      "%endif"
     ],
-    "description": "#if...#else block"
+    "description": "%if...%else block"
   },
   "If-IfElse-else-block": {
     "prefix": "t:if-elif-else",
     "body": [
-      "#if ($1)",
+      "%if (${1:condition})",
       "    $2",
-      "#ifelse",
-      "    $3",
-      "#else",
+      "%elseif (${3:condition})",
       "    $4",
-      "#endif"
+      "%else",
+      "    $5",
+      "%endif"
     ],
-    "description": "#if...#elseif..#else block"
+    "description": "%if...%elseif..%else block"
   },
   "Unless": {
     "prefix": "t:unless",
     "body": [
-      "#unless ($1)",
+      "%unless ($1)",
       "    $2",
-      "#endunless",
+      "%endunless",
     ],
-    "description": "#unless block"
+    "description": "%unless block"
   },
 
   /* Loops */
   "For-block": {
     "prefix": "t:for",
     "body": [
-      "#for (\\$i = ${1:0}; \\$i < ${2:\\$count}; \\$i++)",
+      "%for (\\$i = ${1:0}; \\$i < ${2:\\$count}; \\$i++)",
       "    $3",
-      "#endfor"
+      "%endfor"
     ],
-    "description": "#for block"
+    "description": "%for block"
   },
   "while-block": {
     "prefix": "t:while",
     "body": [
-      "#while ($1)",
+      "%while ($1)",
       "    $2",
-      "#endwhile"
+      "%endwhile"
     ],
-    "description": "#while block"
+    "description": "%while block"
   },
   "tintin comment": {
     "prefix": "t:comment",
-    "body": "{# ${1:comment} #}",
+    "body": "{{# ${1:comment} #}}",
     "description": "comment block"
   },
   "tintin echo-data": {
     "prefix": "t:echo",
-    "body": "{{ ${1:\\$data} }}",
+    "body": "{{ ${1:\\$var} }}",
     "description": "show escaped data"
   },
   "tintin echo-data unescape": {
     "prefix": "t:recho",
-    "body": "{{{ ${1:\\$data} }}}",
+    "body": "{{{ ${1:\\$var} }}}",
     "description": "show unescaped data"
   },
   "inject service": {
     "prefix": "t:inject",
-    "body": "#inject('${1:name}', '${2:default}')",
-    "description": "#inject Service"
+    "body": "%inject('${1:name}', '${2:default}')",
+    "description": "%inject Service"
   },
   "loop": {
     "prefix": "t:loop",
     "body": [
-     "#loop (${1:\\$collection} as ${2:\\$item})",
+     "%loop (${1:\\$collection} as ${2:\\$item})",
       "    $3",
-      "#endloop"
+      "%endloop"
     ],
     "description": "$loop block"
   },
   "stop": {
     "prefix": "t:stop",
-    "body": "#stop(\\$name == $1)",
+    "body": "%stop(\\$var == $1)",
     "description": "stop"
   },
   "jump": {
     "prefix": "t:jump",
-    "body": "#jump(\\$name == $1)",
+    "body": "%jump(\\$var == $1)",
     "description": "jump"
   },
 }
