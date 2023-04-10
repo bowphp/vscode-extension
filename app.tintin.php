@@ -3,20 +3,40 @@
 %block("title", "The page title")
 
 %block("content")
+	{## comment ##}
+
+	%auth
+		// code
+	%endauth
+
+	%guest
+		// code
+	%endguest
+
+	%isset ($is_service_side)
+		// code
+	%endisset
+
+	%isset($is_service_side)
+		// Show the code when the variable $is_service_side
+		// is define
+	%endisset
+
 	%if(true)
 		// Do Something
 	%endif
 
 	%loop($users as $user)
 		{{ $user->name }}
+		%jump
+		%stop
 	%endloop
 
-	{{# comment #}}
 	%if (true)
 		// Do Something
 	%endif
 
-	%white(true)
+	%while(true)
 		// Do Somethink
 	%endwhile
 
@@ -27,4 +47,22 @@
 	%unless(false)
 		// Do Somethink
 	%endunless
+
+	%verbatim
+		// The code here cannot be parse by
+		// tempate lexer
+	%endverbatim
+
+	%env("production")
+		// The code here should be show on
+		// production only
+	%endenv
+
+	%production
+		// Alias of %env('production')
+	%endproduction
+
+	%include("the-template-partials", $data)
+	%includeif($name == 'tintin', 'the-template-partials', $data)
+	%includeunless($name == 'tintin', 'the-template-partials', $data)
 %endblock
