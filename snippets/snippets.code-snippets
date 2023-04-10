@@ -18,6 +18,56 @@
     "body": "%include('${1:name}', [])",
     "description": "%include view"
   },
+  "Include Whem view": {
+    "prefix": "t:includeWhen",
+    "body": "%includeWhen(${1:condition}, '${2:name}''${3:, data}')",
+    "description": "%include view when condition is match"
+  },
+  "Lang-block": {
+    "prefix": "t:lang",
+    "body": [
+      "%lang(${1:lang})",
+      "    $1",
+      "%endlang"
+    ],
+    "description": "%lang block"
+  },
+  "Auth-block": {
+    "prefix": "t:auth",
+    "body": [
+      "%auth(${1:guard})",
+      "    $1",
+      "%endauth"
+    ],
+    "description": "%auth block"
+  },
+  "Guest-block": {
+    "prefix": "t:guest",
+    "body": [
+      "%guest",
+      "    $1",
+      "%endguest"
+    ],
+    "description": "%guest block show the code for guest auth session"
+  },
+  "Empty-block": {
+    "prefix": "t:empty",
+    "body": [
+      "%empty ($1)",
+      "    $2",
+      "%endempty"
+    ],
+    "description": "%empty block show the code when passed variable is empty"
+  },
+  "Error-block": {
+    "prefix": "t:error",
+    "body": [
+      "%error ($1)",
+      "    $2",
+      "%enderror"
+    ],
+    "description": "%error block show the error from session flash"
+  },
   "If-block": {
     "prefix": "t:if",
     "body": [
@@ -26,6 +76,26 @@
       "%endif"
     ],
     "description": "%if block"
+  },
+  "Isset-block": {
+    "prefix": "t:isset",
+    "body": [
+      "%isset ($1)",
+      "    $2",
+      "%endisset"
+    ],
+    "description": "%isset block"
+  },
+  "Isset-else-block": {
+    "prefix": "t:isset",
+    "body": [
+      "%isset ($1)",
+      "    $2",
+      "%else",
+      "    $3",
+      "%endisset"
+    ],
+    "description": "%isset block"
   },
   "If-else-block": {
     "prefix": "t:if-else",
