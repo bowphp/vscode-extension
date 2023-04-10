@@ -369,7 +369,7 @@
           ]
         },
         {
-          "begin": "(?x)(?<![A-Za-z0-9_-]) (%  (?i:\n    auth\n    |stop\n    |jump\n    |elseif\n    |empty\n    |error\n    |extends\n    |for\n    |loop\n    |if\n    |include\n    |includeif\n    |includeunless\n    |includewhen\n    |inject\n    |isset\n    |json\n    |block\n    |unless\n    |unset\n    |while\n    |production\n    |env\n    |php\n   )[\\t ]*\n)(\\() # Followed by opening parentheses\n",
+          "begin": "(?x)(?<![A-Za-z0-9_-]) (%  (?i:\n    auth\n    |stop\n    |jump\n    |elseif\n    |empty\n    |error\n    |extends\n    |for\n    |loop\n    |if\n    |include\n    |includeif\n    |includeunless\n    |includewhen\n    |inject\n    |isset\n    |json\n    |block\n    |unless\n    |unset\n    |while\n    |production\n    |env\n    |php\n   |extends\n   )[\\t ]*\n)(\\() # Followed by opening parentheses\n",
           "beginCaptures": {
             "1": {
               "name": "keyword.tintin"
@@ -417,7 +417,7 @@
           ]
         },
         {
-          "match": "(?x)(?<![A-Za-z0-9_-]) %(?:  stop\n  |jump\n  |csrf\n  |else\n)\\b\n",
+          "match": "(?x)(?<![A-Za-z0-9_-]) %(?:  stop\n  |jump\n  |csrf\n  |else\n  |extends\n)\\b\n",
           "name": "keyword.tintin"
         },
         {
