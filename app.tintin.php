@@ -13,7 +13,7 @@
 		// code
 	%endguest
 
-	%isset ($is_service_side)
+	%isset($is_service_side)
 		// code
 	%endisset
 
@@ -30,6 +30,8 @@
 		{{ $user->name }}
 		%jump
 		%stop
+	%empty
+
 	%endloop
 
 	%if (true)
@@ -58,11 +60,21 @@
 		// production only
 	%endenv
 
+	%empty($array)
+		The array is empty
+	%endempty
+
 	%production
 		// Alias of %env('production')
 	%endproduction
 
 	%include("the-template-partials", $data)
 	%includeif($name == 'tintin', 'the-template-partials', $data)
-	%includeunless($name == 'tintin', 'the-template-partials', $data)
+	%includewhen($name == 'tintin', 'the-template-partials', $data)
+
+	%flash("message")
 %endblock
+
+%macro("field", string $type, string $name, string $value = null)
+
+%endmacro
