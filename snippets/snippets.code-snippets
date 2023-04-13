@@ -59,14 +59,12 @@
     ],
     "description": "%empty block show the code when passed variable is empty"
   },
-  "Error-block": {
-    "prefix": "t:error",
+  "Flash-block": {
+    "prefix": "t:flash",
     "body": [
-      "%error ($1)",
-      "    $2",
-      "%enderror"
+      "%flash($1)"
     ],
-    "description": "%error block show the error from session flash"
+    "description": "%flash show session flash"
   },
   "If-block": {
     "prefix": "t:if",
