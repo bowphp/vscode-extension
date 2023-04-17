@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import * as html from 'vscode-html-languageservice';
-import * as lst from 'vscode-languageserver-types';
+import { TextDocument } from 'vscode-languageserver-textdocument';
 import { TintinFormatter, ITintinFormatterOptions } from "../services/TintinFormatter";
 
 const service = html.getLanguageService()
@@ -46,7 +46,7 @@ export class TintinFormattingEditProvider implements vscode.DocumentFormattingEd
     Object.assign(options, htmlFormatConfig);
 
     // format as html
-    let doc = lst.TextDocument.create(document.uri.fsPath, 'html', 1, document.getText());
+    let doc = TextDocument.create(document.uri.fsPath, 'html', 1, document.getText());
     let htmlTextEdit = service.format(doc, range, options);
 
     // format as blade

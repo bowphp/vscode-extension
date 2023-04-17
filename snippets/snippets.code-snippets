@@ -1,8 +1,22 @@
 {
+  "Import Macro": {
+    "prefix": "t:import",
+    "body": "%import('${1:name}')",
+    "description": "%import macro"
+  },
   "Extend layout": {
     "prefix": "t:extends",
     "body": "%extends('${1:name}')",
     "description": "%extends view layout"
+  },
+  "Macro layout": {
+    "prefix": "t:macro",
+    "body": [
+      "%macro('${1:name}', ${2:param})",
+      "    $3",
+      "%endmacro"
+    ],
+    "description": "Create the new macro"
   },
   "Block layout": {
     "prefix": "t:block",
@@ -20,7 +34,7 @@
   },
   "Include Whem view": {
     "prefix": "t:includeWhen",
-    "body": "%includeWhen(${1:condition}, '${2:name}''${3:, data}')",
+    "body": "%includewhen(${1:condition}, '${2:name}''${3:, data}')",
     "description": "%include view when condition is match"
   },
   "Lang-block": {
@@ -31,6 +45,13 @@
       "%endlang"
     ],
     "description": "%lang block"
+  },
+  "Class-block": {
+    "prefix": "t:class",
+    "body": [
+      "%class(${1:lang})",
+    ],
+    "description": "%class block"
   },
   "Auth-block": {
     "prefix": "t:auth",
@@ -53,7 +74,7 @@
   "Empty-block": {
     "prefix": "t:empty",
     "body": [
-      "%empty ($1)",
+      "%empty($1)",
       "    $2",
       "%endempty"
     ],

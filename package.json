@@ -2,7 +2,7 @@
   "name": "bow-tintin",
   "displayName": "Bow Tintin",
   "description": "Bow Tintin Language Support",
-  "version": "3.0.0",
+  "version": "1.0.0",
   "author": "Franck DAKIA",
   "icon": "icon.jpg",
   "publisher": "papac",
@@ -87,6 +87,7 @@
   },
   "dependencies": {
     "vscode-css-languageservice": "^6.2.4",
+    "vscode-languageserver-textdocument": "^3.17.3",
     "vscode-html-languageservice": "^4.2.5",
     "vscode-languageclient": "^6.1.4",
     "vscode-languageserver-types": "^3.17.3"
