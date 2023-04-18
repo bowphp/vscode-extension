@@ -72,7 +72,7 @@ export function activate(context: vscode.ExtensionContext) {
   let clientOptions: LanguageClientOptions = {
     documentSelector: ['tintin'],
     synchronize: {
-      configurationSection: ['tintin', 'css', 'javascript', 'emmet'], // the settings to synchronize
+      configurationSection: ['tintin', 'css', 'javascript', 'emmet', 'php'], // the settings to synchronize
     },
     initializationOptions: {
       embeddedLanguages

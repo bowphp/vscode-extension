@@ -1,3 +1,9 @@
+%import("macro")
+
+%macro("field", string $type, string $name, ?string $value = null)
+    <input type="{{ $type }}" name="{{ $name }}" value="{{ $value }}"/>
+%endmacro
+
 %extends("layout")
 
 %block("title", "The page title")
@@ -7,47 +13,59 @@
 
 	%auth
 		// code
+    %else
+        Do something else
 	%endauth
 
 	%guest
 		// code
+    %else
+        Do something else
 	%endguest
 
 	%isset($is_service_side)
 		// code
+    %else
+        Do something else
 	%endisset
 
 	%isset($is_service_side)
 		// Show the code when the variable $is_service_side
 		// is define
+    %else
+        Do something else
 	%endisset
 
 	%if(true)
-		// Do Something
+		// Do something
 	%endif
 
 	%loop($users as $user)
 		{{ $user->name }}
 		%jump
 		%stop
-	%empty
-
 	%endloop
 
 	%if (true)
-		// Do Something
+		// Do something
+    %elif(false)
+		// Do something
+    %else
+		// Do something
 	%endif
 
 	%while(true)
-		// Do Somethink
+		// Do something
 	%endwhile
 
 	%for($i = 0; $i < 0; $i++)
-		// Do Somethink
+		// Do something
 	%endfor
 
 	%unless(false)
-		// Do Somethink
+		// Do something
+    %else
+        Do something else
 	%endunless
 
 	%verbatim
@@ -58,23 +76,35 @@
 	%env("production")
 		// The code here should be show on
 		// production only
+    %else
+        Do something else
 	%endenv
 
 	%empty($array)
 		The array is empty
+    %else
+        Do something else
 	%endempty
+
+	%notempty($array)
+		The array is notempty
+    %else
+        Do something else
+	%endnotempty
 
 	%production
 		// Alias of %env('production')
+    %else
+        Do something else
 	%endproduction
 
 	%include("the-template-partials", $data)
 	%includeif($name == 'tintin', 'the-template-partials', $data)
 	%includewhen($name == 'tintin', 'the-template-partials', $data)
 
-	%flash("message")
+    %hasflash("error")
+        %flash("error")
+    %else
+        Do something else
+    %endhasflash
 %endblock
-
-%macro("field", string $type, string $name, string $value = null)
-
-%endmacro

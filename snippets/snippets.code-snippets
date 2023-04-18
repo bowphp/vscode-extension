@@ -9,7 +9,25 @@
     "body": "%extends('${1:name}')",
     "description": "%extends view layout"
   },
-  "Macro layout": {
+  "Verbatim block": {
+    "prefix": "t:verbatim",
+    "body": [
+        "%verbatim",
+        "    $2",
+        "%endverbatim"
+    ],
+    "description": "%verbatim espace his the content from parser"
+  },
+  "Hasflash block": {
+    "prefix": "t:hasflash",
+    "body": [
+        "%hasflash('${1:name}')",
+        "    $2",
+        "%endhasflash"
+    ],
+    "description": "%hasflash check if the flash message exist"
+  },
+  "Macro block": {
     "prefix": "t:macro",
     "body": [
       "%macro('${1:name}', ${2:param})",
@@ -80,6 +98,15 @@
     ],
     "description": "%empty block show the code when passed variable is empty"
   },
+  "NotEmpty-block": {
+    "prefix": "t:notempty",
+    "body": [
+      "%notempty($1)",
+      "    $2",
+      "%endnotempty"
+    ],
+    "description": "%notempty block show the code when passed variable is not empty"
+  },
   "Flash-block": {
     "prefix": "t:flash",
     "body": [
@@ -90,7 +117,7 @@
   "If-block": {
     "prefix": "t:if",
     "body": [
-      "%if ($1)",
+      "%if($1)",
       "    $2",
       "%endif"
     ],
@@ -99,27 +126,27 @@
   "Isset-block": {
     "prefix": "t:isset",
     "body": [
-      "%isset ($1)",
+      "%isset($1)",
       "    $2",
       "%endisset"
     ],
-    "description": "%isset block"
+    "description": "%isset check if the passed varibale is define"
   },
   "Isset-else-block": {
     "prefix": "t:isset",
     "body": [
-      "%isset ($1)",
+      "%isset($1)",
       "    $2",
       "%else",
       "    $3",
       "%endisset"
     ],
-    "description": "%isset block"
+    "description": "%isset check if the passed varibale is define"
   },
   "If-else-block": {
     "prefix": "t:if-else",
     "body": [
-      "%if (${1:condition})",
+      "%if(${1:condition})",
       "    $2",
       "%else",
       "    $3",
@@ -128,11 +155,11 @@
     "description": "%if...%else block"
   },
   "If-IfElse-else-block": {
-    "prefix": "t:if-elif-else",
+    "prefix": "t:if-elif",
     "body": [
-      "%if (${1:condition})",
+      "%if(${1:condition})",
       "    $2",
-      "%elseif (${3:condition})",
+      "%elseif(${3:condition})",
       "    $4",
       "%else",
       "    $5",
@@ -143,7 +170,7 @@
   "Unless": {
     "prefix": "t:unless",
     "body": [
-      "%unless ($1)",
+      "%unless($1)",
       "    $2",
       "%endunless",
     ],
@@ -152,7 +179,7 @@
   "For-block": {
     "prefix": "t:for",
     "body": [
-      "%for (\\$i = ${1:0}; \\$i < ${2:\\$count}; \\$i++)",
+      "%for(\\$i = ${1:0}; \\$i < ${2:\\$count}; \\$i++)",
       "    $3",
       "%endfor"
     ],
@@ -161,7 +188,7 @@
   "while-block": {
     "prefix": "t:while",
     "body": [
-      "%while ($1)",
+      "%while($1)",
       "    $2",
       "%endwhile"
     ],
@@ -185,25 +212,25 @@
   "inject service": {
     "prefix": "t:inject",
     "body": "%inject('${1:name}', '${2:default}')",
-    "description": "%inject Service"
+    "description": "%inject the content of %block"
   },
   "loop": {
     "prefix": "t:loop",
     "body": [
-     "%loop (${1:\\$collection} as ${2:\\$item})",
+     "%loop(${1:\\$collection} as ${2:\\$item})",
       "    $3",
       "%endloop"
     ],
-    "description": "$loop block"
+    "description": "%loop on the passed array or object"
   },
   "stop": {
     "prefix": "t:stop",
     "body": "%stop(\\$var == $1)",
-    "description": "stop"
+    "description": "stop the loop"
   },
   "jump": {
     "prefix": "t:jump",
     "body": "%jump(\\$var == $1)",
-    "description": "jump"
+    "description": "%jump the loop iteration to the next"
   },
 }
