@@ -99,8 +99,8 @@
 	%endproduction
 
 	%include("the-template-partials", $data)
-	%includeif($name == 'tintin', 'the-template-partials', $data)
-	%includewhen($name == 'tintin', 'the-template-partials', $data)
+	%includeIf($name == 'tintin', 'the-template-partials', $data)
+	%includeWhen($name == 'tintin', 'the-template-partials', $data)
 
     %hasflash("error")
         %flash("error")
