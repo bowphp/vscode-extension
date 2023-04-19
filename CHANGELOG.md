@@ -11,7 +11,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - Add the base of language
 - Add the new tags and update main concept
 
-[1.0.1]
+[1.1.0]
 
 - Add the %macro, %macro and %import for manage the macro system
 - Add the %verbatim and %verbatim for escape the partial code
