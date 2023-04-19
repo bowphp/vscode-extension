@@ -4,20 +4,16 @@
 name: Node.js CI
 
 on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+  release:
+    types:
+    - created
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [18.x]
-
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
@@ -26,5 +22,9 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: npm run webpack --if-present
-    - run: npm run build-srv --if-present
+    - run: npm install @vscode/vsce --save-dev
+    - name: Publish
+      if: success() && startsWith(github.ref, 'refs/tags/') && matrix.os == 'ubuntu-latest'
+      run: npm run deploy
+      env:
+        VSCE_PAT: ${{ secrets.VSCE_PAT }}

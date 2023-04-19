@@ -16,7 +16,8 @@
     "compile": "tsc -watch -p ./",
     "vscode:prepublish": "webpack --mode production && bash -c 'pushd \"./\"' && npm run build-srv",
     "webpack": "webpack --mode development",
-    "webpack-dev": "webpack --mode development --watch"
+    "webpack-dev": "webpack --mode development --watch",
+    "deploy": "vsce publish"
   },
   "repository": {
     "type": "git",
