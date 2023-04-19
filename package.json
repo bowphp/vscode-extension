@@ -14,7 +14,7 @@
   "scripts": {
     "build-srv": "cd ./server && npm install && tsc -p ./",
     "compile": "tsc -watch -p ./",
-    "vscode:prepublish": "webpack --mode production && pushd \"./\" && npm run build-srv && popd",
+    "vscode:prepublish": "webpack --mode production && bash -c 'pushd \"./\"' && npm run build-srv",
     "webpack": "webpack --mode development",
     "webpack-dev": "webpack --mode development --watch"
   },

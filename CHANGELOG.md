@@ -5,11 +5,9 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [Unreleased]
 
-[1.0.0]
+[1.1.1]
 
-- Initial release
-- Add the base of language
-- Add the new tags and update main concept
+- Fix the %import hightlight
 
 [1.1.0]
 
@@ -22,3 +20,9 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
   - %guest and %endguest
   - %empty and %endempty
   - %notempty and %endnotempty
+
+[1.0.0]
+
+- Initial release
+- Add the base of language
+- Add the new tags and update main concept
