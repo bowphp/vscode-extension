@@ -42,8 +42,8 @@ Specific settings for Tintin language
 | t:import            | %import                                   |
 | t:block             | %block ... %endblock                      |
 | t:include           | %include                                  |
-| t:includeif         | %includeif                                |
-| t:includewhen       | %includewhen                              |
+| t:includeIf         | %includeIf                                |
+| t:includeWhen       | %includeWhen                              |
 | t:inject            | %inject                                   |
 | t:if                | %if...%endif                              |
 | t:if-else           | %if...%else...%endif                      |
