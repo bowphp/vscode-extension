@@ -52,7 +52,7 @@
   },
   "Include Whem view": {
     "prefix": "t:includeWhen",
-    "body": "%includewhen(${1:condition}, '${2:name}''${3:, data}')",
+    "body": "%includeWhen(${1:condition}, '${2:name}''${3:, data}')",
     "description": "%include view when condition is match"
   },
   "Lang-block": {
