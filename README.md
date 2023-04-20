@@ -55,6 +55,8 @@ Specific settings for Tintin language
 | t:jump              | %jump()                                   |
 | t:stop              | %stop()                                   |
 | t:csrf              | %csrf                                     |
+| t:method            | %method                                   |
+| t:service           | %service                                  |
 | t:class             | %class                                    |
 | t:flash             | %flash()                                  |
 | t:empty             | %empty...%endempty                        |

@@ -4,6 +4,11 @@
     "body": "%import('${1:name}')",
     "description": "%import macro"
   },
+  "Service layout": {
+    "prefix": "t:service",
+    "body": "%service('${1:name}', '${2:service}')",
+    "description": "%service inject a service from container"
+  },
   "Extend layout": {
     "prefix": "t:extends",
     "body": "%extends('${1:name}')",
@@ -47,13 +52,28 @@
   },
   "Include view": {
     "prefix": "t:include",
-    "body": "%include('${1:name}', [])",
+    "body": "%include('${1:name}''${2:, data}')",
     "description": "%include view"
   },
   "Include Whem view": {
     "prefix": "t:includeWhen",
     "body": "%includeWhen(${1:condition}, '${2:name}''${3:, data}')",
-    "description": "%include view when condition is match"
+    "description": "%includeWhen view when condition is match"
+  },
+  "Include If view": {
+    "prefix": "t:includeIf",
+    "body": "%includeIf('${1:name}''${2:, data}')",
+    "description": "%includeIf the view exist"
+  },
+  "Csrf-block": {
+    "prefix": "t:csrf",
+    "body": "%csrf",
+    "description": "%csrf field"
+  },
+  "Method-block": {
+    "prefix": "t:method",
+    "body": "%method('${1:method}')",
+    "description": "%method field"
   },
   "Lang-block": {
     "prefix": "t:lang",

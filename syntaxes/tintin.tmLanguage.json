@@ -369,7 +369,7 @@
           ]
         },
         {
-          "begin": "(?x)(?<![A-Za-z0-9_-]) (%  (?i:\n    auth\n    |stop\n    |jump\n    |class\n    |flash\n    |elseif\n    |elif\n    |empty\n    |error\n    |extends\n    |for\n    |loop\n    |if\n    |include\n    |includeWhen\n    |includeIf\n    |inject\n    |isset\n    |json\n    |block\n    |unless\n    |unisset\n    |while\n    |production\n    |env\n    |php\n   |raw\n   |extends\n   |verbatim\n   |macro\n   |hasflash\n   |import\n   |notempty\n   )[\\t ]*\n)(\\() # Followed by opening parentheses\n",
+          "begin": "(?x)(?<![A-Za-z0-9_-]) (%  (?i:\n    auth\n    |stop\n    |jump\n    |class\n    |flash\n    |elseif\n    |elif\n    |empty\n    |error\n    |extends\n    |for\n    |loop\n    |if\n    |include\n    |includeWhen\n    |includeIf\n    |inject\n    |method\n    |service\n    |isset\n    |json\n    |block\n    |unless\n    |unisset\n    |while\n    |production\n    |env\n    |php\n   |raw\n   |extends\n   |verbatim\n   |macro\n   |hasflash\n   |import\n   |notempty\n   )[\\t ]*\n)(\\() # Followed by opening parentheses\n",
           "beginCaptures": {
             "1": {
               "name": "keyword.tintin"
@@ -417,7 +417,7 @@
           ]
         },
         {
-          "match": "(?x)(?<![A-Za-z0-9_-]) %(?:  stop\n  |jump\n  |csrf\n  |class\n  |flash\n  |else\n  |extends\n  |import\n)\\b\n",
+          "match": "(?x)(?<![A-Za-z0-9_-]) %(?:  stop\n  |jump\n  |csrf\n  |service\n  |method\n  |class\n  |flash\n  |else\n  |extends\n  |import\n)\\b\n",
           "name": "keyword.tintin"
         },
         {
