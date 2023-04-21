@@ -99,12 +99,18 @@
 	%endproduction
 
 	%include("the-template-partials", $data)
-	%includeIf($name == 'tintin', 'the-template-partials', $data)
+	%includeIf('include-if-the-template-partials-exist', $data)
 	%includeWhen($name == 'tintin', 'the-template-partials', $data)
 
     %hasflash("error")
-        %flash("error")
-    %else
-        Do something else
+		<div class="alert alert-danger">
+			%flash("error")
+		</div>
     %endhasflash
 %endblock
+
+%service("user_service", "App\Service\UserService")
+
+%loop($user_service->fetchAll() as $user)
+	{{ $user->name }}
+%endloop
